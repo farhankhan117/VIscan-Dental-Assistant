@@ -1,0 +1,562 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #14243b;
+    }
+    body { margin: 0; padding: 4px 0; }
+    .row { display: flex; align-items: center; gap: 12px; }
+    button {
+      width: 54px;
+      height: 54px;
+      border: 0;
+      border-radius: 50%;
+      background: #17627b;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px #10233f30;
+    }
+    button:hover { background: #124e64; }
+    #clear {
+      width: auto;
+      height: 38px;
+      padding: 0 14px;
+      border: 1px solid #d5deea;
+      border-radius: 9px;
+      background: white;
+      color: #334155;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: none;
+    }
+    #clear:hover { background: #f1f5f9; }
+    #test-voice {
+      width: auto;
+      height: 38px;
+      padding: 0 14px;
+      border: 1px solid #d5deea;
+      border-radius: 9px;
+      background: white;
+      color: #334155;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: none;
+    }
+    #test-voice:hover { background: #f1f5f9; }
+    button[aria-pressed="true"] {
+      background: #c0394b;
+      animation: pulse 1.4s infinite;
+    }
+    button:disabled { cursor: not-allowed; opacity: .55; }
+    #status { font-size: 14px; color: #52647a; }
+    #transcript {
+      min-height: 28px;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border: 1px solid #dfe7f1;
+      border-radius: 9px;
+      background: white;
+      font-size: 15px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    #error { color: #a12d3b; font-size: 13px; margin-top: 6px; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 #c0394b50; }
+      50% { box-shadow: 0 0 0 9px #c0394b00; }
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <button id="mic" type="button" aria-label="Start conversation" title="Start conversation">🎙️</button>
+    <button id="clear" type="button">Clear</button>
+    <button id="test-voice" type="button">Test voice</button>
+    <span id="status" aria-live="polite">Tap the microphone to start a conversation.</span>
+  </div>
+  <div id="transcript" aria-live="polite">Your words will appear here as you speak.</div>
+  <div id="error" role="alert"></div>
+  <script>
+    (() => {
+      const mic = document.getElementById("mic");
+      const clearButton = document.getElementById("clear");
+      const testVoiceButton = document.getElementById("test-voice");
+      const status = document.getElementById("status");
+      const transcriptBox = document.getElementById("transcript");
+      const errorBox = document.getElementById("error");
+      const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      let recognition = null;
+      let listening = false;
+      let finalText = "";
+      let interimText = "";
+      let silenceTimer = null;
+      let recognitionRestartTimer = null;
+      let currentLanguage = "en-US";
+      let mediaStream = null;
+      let mediaRecorder = null;
+      let discardRecording = false;
+      let lastSpokenId = "";
+      let pausedForSpeech = false;
+      let assistantSpeaking = false;
+      let currentSpokenText = "";
+      let voiceStopped = false;
+      let captureGeneration = 0;
+      let playbackGeneration = 0;
+      let playbackWatchdog = null;
+      let lastCancelSpeechId = "";
+      let lastStopListeningId = "0";
+
+      function send(value) {
+        window.parent.postMessage({
+          isStreamlitMessage: true,
+          type: "streamlit:setComponentValue",
+          value
+        }, "*");
+      }
+
+      function showTranscript(text) {
+        const clean = text.trim();
+        transcriptBox.textContent = clean || "Listening…";
+        send({ transcript: clean, listening, error: "" });
+      }
+
+      function setListening(active) {
+        listening = active;
+        mic.setAttribute("aria-pressed", String(active));
+        const startLabel = window.componentDictationMode
+          ? "Start speaking"
+          : window.componentContinuous ? "Start conversation" : "Start speaking";
+        const stopLabel = window.componentDictationMode
+          ? "Stop speaking"
+          : window.componentContinuous ? "Stop conversation" : "Stop speaking";
+        mic.setAttribute("aria-label", active ? stopLabel : startLabel);
+        mic.title = active ? stopLabel : startLabel;
+        status.textContent = active
+          ? (window.componentDictationMode
+            ? "Listening for a clinical dictation…"
+            : window.componentContinuous ? "Listening continuously. Interrupt any reply to speak; say “stop” or tap to end." : "Listening… stops after a pause.")
+          : "Tap the microphone to start a conversation.";
+        send({ transcript: finalText.trim(), listening, error: errorBox.textContent });
+      }
+
+      function cancelAssistantSpeech() {
+        playbackGeneration++;
+        clearTimeout(playbackWatchdog);
+        playbackWatchdog = null;
+        if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+        assistantSpeaking = false;
+        pausedForSpeech = false;
+        currentSpokenText = "";
+      }
+
+      function speakReply(text) {
+        if (!("speechSynthesis" in window) || !window.SpeechSynthesisUtterance) {
+          errorBox.textContent = "Voice output is not supported in this browser. Use Chrome or Edge.";
+          status.textContent = "Voice playback is unavailable.";
+          return;
+        }
+
+        cancelAssistantSpeech();
+        const currentPlayback = playbackGeneration;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = "en-US";
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+        let playbackStarted = false;
+        assistantSpeaking = true;
+        currentSpokenText = text;
+        status.textContent = "Preparing English voice response…";
+        playbackWatchdog = setTimeout(() => {
+          if (currentPlayback !== playbackGeneration || playbackStarted) return;
+          assistantSpeaking = false;
+          errorBox.textContent = "The browser did not start voice playback. Press Test voice and check your English voice settings.";
+          status.textContent = "Voice playback did not start.";
+        }, 8000);
+        const startPlayback = (attempt = 0) => {
+          if (currentPlayback !== playbackGeneration) return;
+          const voices = window.speechSynthesis.getVoices();
+          const englishVoice = voices.find((voice) => /^en(?:-|_)/i.test(voice.lang));
+          if (englishVoice) utterance.voice = englishVoice;
+          if (!voices.length && attempt < 5) {
+            setTimeout(() => startPlayback(attempt + 1), 150);
+            return;
+          }
+          try {
+            window.speechSynthesis.resume();
+            window.speechSynthesis.speak(utterance);
+          } catch (error) {
+            errorBox.textContent = `Voice playback failed: ${error.message || "browser speech error"}`;
+            status.textContent = "Voice playback failed.";
+          }
+        };
+        utterance.onstart = () => {
+          playbackStarted = true;
+          clearTimeout(playbackWatchdog);
+          playbackWatchdog = null;
+          if (currentPlayback === playbackGeneration) {
+            errorBox.textContent = "";
+            status.textContent = "Speaking response…";
+          }
+        };
+        utterance.onend = () => {
+          if (currentPlayback !== playbackGeneration) return;
+          clearTimeout(playbackWatchdog);
+          playbackWatchdog = null;
+          assistantSpeaking = false;
+          if (window.componentContinuous && listening) {
+            scheduleRecognitionRestart(250);
+            status.textContent = "Listening continuously. Say “stop” or “end” to finish.";
+          } else if (!listening) {
+            status.textContent = "Tap the microphone to start again.";
+          }
+        };
+        utterance.onerror = (event) => {
+          if (currentPlayback !== playbackGeneration) return;
+          clearTimeout(playbackWatchdog);
+          playbackWatchdog = null;
+          const reason = event.error || "unknown browser error";
+          errorBox.textContent = `Voice playback failed (${reason}). Check your device volume and English speech settings.`;
+          status.textContent = "Voice playback failed.";
+          assistantSpeaking = false;
+          if (window.componentContinuous && listening) startRecognitionEngine();
+        };
+        startPlayback();
+      }
+
+      function stopRecognition(discard = false) {
+        listening = false;
+        clearTimeout(silenceTimer);
+        clearTimeout(recognitionRestartTimer);
+        if (discard) {
+          voiceStopped = true;
+          captureGeneration++;
+          cancelAssistantSpeech();
+        }
+        if (!window.componentContinuous) {
+          currentTurnText = `${finalText} ${interimText}`.trim();
+        }
+        if (recognition) {
+          recognition.onend = null;
+          recognition.onerror = null;
+          recognition.onresult = null;
+          recognition.stop();
+        }
+        discardRecording = discard;
+        if (mediaRecorder && mediaRecorder.state !== "inactive") mediaRecorder.stop();
+        else if (mediaStream) {
+          mediaStream.getTracks().forEach((track) => track.stop());
+          mediaStream = null;
+        }
+        setListening(false);
+        if (window.componentContinuous) {
+          send({
+            transcript: "",
+            listening: false,
+            session_ended: true,
+            session_end_id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+            error: errorBox.textContent
+          });
+        }
+      }
+
+      window.addEventListener("pagehide", () => stopRecognition(true));
+
+      function isStopCommand(text) {
+        return /^(?:stop(?:\s+(?:listening|voice|assistant|now))?|end(?:\s+(?:conversation|listening|assistant|now))?|finish|quit|exit|goodbye|that's all|that's enough)[.! ]*$/i.test(text.trim());
+      }
+
+      function isAssistantEcho(text) {
+        const words = text.toLowerCase().replace(/[^a-z0-9\s]/g, " ").trim().split(/\s+/).filter(Boolean);
+        const reply = currentSpokenText.toLowerCase().replace(/[^a-z0-9\s]/g, " ").trim();
+        if (!words.length || !reply) return false;
+        if (isStopCommand(text)) return false;
+        if (
+          words.length === 1 &&
+          /^(?:open|show|find|search|stop|end|cancel|wait|yes|no|next|details?|findings?)$/.test(words[0])
+        ) return false;
+        if (words.length < 2) return false;
+        const phrase = words.join(" ");
+        if (reply.includes(phrase)) return true;
+        return false;
+      }
+
+      function handleRecognitionResult(event) {
+        let interim = "";
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const phrase = event.results[i][0].transcript.trim();
+          if (!phrase) continue;
+          if (assistantSpeaking && isAssistantEcho(phrase)) continue;
+          if (assistantSpeaking) {
+            cancelAssistantSpeech();
+            status.textContent = "I heard you. Go ahead; I'm listening.";
+          }
+          if (event.results[i].isFinal) {
+            finalText += phrase + " ";
+            if (isStopCommand(`${finalText} ${interim}`)) {
+              endConversation();
+              return;
+            }
+          }
+          else interim += phrase;
+        }
+        interimText = interim;
+        const text = `${finalText}${interimText}`.trim();
+        if (!text) return;
+        showTranscript(text);
+        clearTimeout(silenceTimer);
+        silenceTimer = setTimeout(
+          window.componentContinuous ? finalizeTurn : () => stopRecognition(),
+          2600
+        );
+      }
+
+      function endConversation() {
+        status.textContent = "Conversation ended.";
+        transcriptBox.textContent = "Listening stopped. Tap the microphone to start again.";
+        finalText = "";
+        interimText = "";
+        stopRecognition(true);
+      }
+
+      function scheduleRecognitionRestart(delay = 500) {
+        if (!listening || !window.componentContinuous || recognitionRestartTimer) return;
+        recognitionRestartTimer = setTimeout(() => {
+          recognitionRestartTimer = null;
+          startRecognitionEngine();
+        }, delay);
+      }
+
+      function startRecorderSegment() {
+        if (!mediaStream || !listening || !window.MediaRecorder) return;
+        let chunks = [];
+        const segmentGeneration = captureGeneration;
+        const recorder = new MediaRecorder(mediaStream);
+        mediaRecorder = recorder;
+        recorder.ondataavailable = (event) => {
+          if (event.data && event.data.size) chunks.push(event.data);
+        };
+        recorder.onstop = () => {
+          const blob = new Blob(chunks, { type: recorder.mimeType || "audio/webm" });
+          const transcriptForSegment = currentTurnText;
+          if (discardRecording) {
+            discardRecording = false;
+            chunks = [];
+            if (listening && window.componentContinuous) startRecorderSegment();
+            else if (mediaStream) {
+              mediaStream.getTracks().forEach((track) => track.stop());
+              mediaStream = null;
+            }
+            return;
+          }
+          if (listening && window.componentContinuous) startRecorderSegment();
+          if (!blob.size) return;
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            if (voiceStopped || segmentGeneration !== captureGeneration) return;
+            const base64 = String(reader.result).split(",", 2)[1] || "";
+            send({
+              transcript: transcriptForSegment,
+              listening,
+              turn_complete: Boolean(window.componentContinuous),
+              error: errorBox.textContent,
+              audio_base64: base64,
+              audio_type: blob.type || "audio/webm",
+              audio_id: `${Date.now()}-${Math.random().toString(16).slice(2)}`
+            });
+          };
+          reader.readAsDataURL(blob);
+          chunks = [];
+        };
+        recorder.start(250);
+      }
+
+      let currentTurnText = "";
+      function finalizeTurn() {
+        clearTimeout(silenceTimer);
+        const turn = `${finalText} ${interimText}`.trim();
+        if (!turn) return;
+        if (isStopCommand(turn)) {
+          endConversation();
+          return;
+        }
+        currentTurnText = turn;
+        finalText = "";
+        interimText = "";
+        transcriptBox.textContent = `${turn}\n\nProcessing…`;
+        if (mediaRecorder && mediaRecorder.state === "recording") mediaRecorder.stop();
+      }
+
+      function startRecognitionEngine() {
+        if (!listening || pausedForSpeech || !recognition) return;
+        try {
+          recognition.start();
+        } catch (_) {
+          scheduleRecognitionRestart(1000);
+        }
+      }
+
+      async function startRecognition() {
+        errorBox.textContent = "";
+        voiceStopped = false;
+        captureGeneration++;
+        if (!Recognition) {
+          voiceStopped = true;
+          errorBox.textContent = "Live speech recognition is not supported here. Please use Chrome or Edge.";
+          send({ transcript: finalText.trim(), listening: false, error: errorBox.textContent });
+          return;
+        }
+        finalText = "";
+        interimText = "";
+        discardRecording = false;
+        transcriptBox.textContent = "Listening…";
+        window.componentContinuous = Boolean(window.componentContinuous);
+        currentLanguage = window.componentLanguage || currentLanguage;
+        recognition = new Recognition();
+        recognition.lang = currentLanguage;
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        try {
+          mediaStream = await navigator.mediaDevices.getUserMedia({
+            audio: {
+              echoCancellation: true,
+              noiseSuppression: true,
+              autoGainControl: true
+            }
+          });
+        } catch (_) {
+          voiceStopped = true;
+          errorBox.textContent = "Microphone access is required. Allow it in your browser and try again.";
+          send({ transcript: "", listening: false, error: errorBox.textContent });
+          return;
+        }
+        recognition.onresult = handleRecognitionResult;
+        recognition.onerror = (event) => {
+          if (event.error === "aborted" && window.componentContinuous && listening) {
+            scheduleRecognitionRestart();
+            return;
+          }
+          if (event.error !== "no-speech" && event.error !== "aborted") {
+            errorBox.textContent = event.error === "not-allowed"
+              ? "Microphone permission was denied. Allow microphone access in your browser."
+              : `Speech recognition error: ${event.error}`;
+          }
+          if (window.componentContinuous && listening) {
+            scheduleRecognitionRestart(event.error === "network" ? 1500 : 500);
+            return;
+          }
+          stopRecognition(true);
+        };
+        recognition.onend = () => {
+          if (listening && window.componentContinuous) {
+            scheduleRecognitionRestart(250);
+          } else if (listening && Date.now() - lastSpeechAt < 1600) {
+            startRecognitionEngine();
+          } else if (listening) {
+            stopRecognition();
+          }
+        };
+        recognition.onresult = ((onresult) => (event) => {
+          lastSpeechAt = Date.now();
+          onresult(event);
+        })(recognition.onresult);
+        try {
+          recognition.start();
+          setListening(true);
+          startRecorderSegment();
+        } catch (_) {
+          errorBox.textContent = "Could not start the microphone. Please try again.";
+          stopRecognition(true);
+        }
+      }
+
+      let lastSpeechAt = Date.now();
+      mic.addEventListener("click", () => listening ? endConversation() : startRecognition());
+      testVoiceButton.addEventListener("click", () => speakReply("Voice output is working."));
+      clearButton.addEventListener("click", () => {
+        finalText = "";
+        interimText = "";
+        errorBox.textContent = "";
+        transcriptBox.textContent = "Your words will appear here as you speak.";
+        status.textContent = listening ? "Transcript cleared. Still listening…" : "Transcript cleared.";
+        if (listening && window.componentContinuous) {
+          discardRecording = true;
+          if (mediaRecorder && mediaRecorder.state === "recording") mediaRecorder.stop();
+        } else {
+          stopRecognition(true);
+          send({
+            transcript: "",
+            listening: false,
+            error: "",
+            action: "clear",
+            clear_id: `${Date.now()}-${Math.random().toString(16).slice(2)}`
+          });
+        }
+      });
+
+      window.addEventListener("message", (event) => {
+        const data = event.data;
+        if (!data || data.type !== "streamlit:render") return;
+        window.componentLanguage = (data.args && data.args.language) || "en-US";
+        window.componentContinuous = Boolean(data.args && data.args.continuous);
+        window.componentDictationMode = Boolean(data.args && data.args.dictation_mode);
+        const stopListeningId = String((data.args && data.args.stop_listening_id) || "0");
+        if (stopListeningId !== lastStopListeningId) {
+          lastStopListeningId = stopListeningId;
+          if (listening) {
+            window.componentContinuous = false;
+            stopRecognition(true);
+            window.componentContinuous = Boolean(data.args && data.args.continuous);
+          }
+        }
+        const cancelId = String((data.args && data.args.cancel_speech_id) || "");
+        if (cancelId && cancelId !== lastCancelSpeechId) {
+          lastCancelSpeechId = cancelId;
+          cancelAssistantSpeech();
+        }
+        const label = listening
+          ? window.componentDictationMode ? "Stop speaking" : window.componentContinuous ? "Stop conversation" : "Stop speaking"
+          : window.componentDictationMode
+            ? "Start speaking"
+            : window.componentContinuous ? "Start conversation" : "Start speaking";
+        mic.setAttribute("aria-label", label);
+        mic.title = label;
+        if (!listening) {
+          status.textContent = window.componentDictationMode
+            ? "Tap the microphone to dictate."
+            : window.componentContinuous
+              ? "Tap the microphone to start a conversation."
+              : "Tap the microphone and speak.";
+        } else if (window.componentDictationMode) {
+          status.textContent = "Listening for a clinical dictation…";
+        } else if (window.componentContinuous) {
+          status.textContent = "Listening continuously. Say “stop” or tap to end.";
+        }
+        const speechId = String((data.args && data.args.speech_id) || "");
+        const reply = String((data.args && data.args.speak_text) || "").trim();
+        if (reply && speechId && speechId !== lastSpokenId && !voiceStopped) {
+          lastSpokenId = speechId;
+          if (window.componentContinuous && listening) {
+            finalText = "";
+            interimText = "";
+          }
+          speakReply(reply);
+        }
+        window.parent.postMessage({ isStreamlitMessage: true, type: "streamlit:setFrameHeight", height: 126 }, "*");
+      });
+
+      window.parent.postMessage({
+        isStreamlitMessage: true,
+        type: "streamlit:componentReady",
+        apiVersion: 1
+      }, "*");
+    })();
+  </script>
+</body>
+</html>
