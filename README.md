@@ -103,9 +103,6 @@ python -m pytest -q
 - **Submission Notes:** `docs/COVER_NOTE.md`
 - **Demo Outputs:** `docs/DEMO_OUTPUT.md`
 
-## 🎥 Demo
-
-Add the project demonstration video link here.
 
 ## ⚠️ Current Limitations
 
