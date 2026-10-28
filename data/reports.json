@@ -1,0 +1,1262 @@
+[
+  {
+    "report_id": "R001",
+    "patient_id": "P001",
+    "report_type": "OPG",
+    "date": "2025-03-12",
+    "findings": [
+      "Mild horizontal alveolar bone loss in the lower left molar region.",
+      "No periapical radiolucency is seen.",
+      "Upper right third molar (18) is missing."
+    ],
+    "report_text": "Mild horizontal alveolar bone loss in the lower left molar region. No periapical radiolucency is seen. Upper right third molar (18) is missing.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R003",
+    "patient_id": "P001",
+    "report_type": "OPG",
+    "date": "2026-03-02",
+    "findings": [
+      "Lower right third molar (48) is mesioangularly impacted.",
+      "Mesial caries on tooth 37.",
+      "Mild maxillary sinus pneumatization is noted bilaterally."
+    ],
+    "report_text": "Lower right third molar (48) is mesioangularly impacted. Mesial caries on tooth 37. Mild maxillary sinus pneumatization is noted bilaterally.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R005",
+    "patient_id": "P002",
+    "report_type": "OPG",
+    "date": "2026-05-20",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Root canal filling is present in tooth 26.",
+      "Periapical radiolucency associated with tooth 36."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Root canal filling is present in tooth 26. Periapical radiolucency associated with tooth 36.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R006",
+    "patient_id": "P002",
+    "report_type": "CBCT",
+    "date": "2026-06-11",
+    "findings": [
+      "The root of the lower left third molar (38) lies in close proximity to the inferior alveolar canal.",
+      "No cortical fracture is seen."
+    ],
+    "report_text": "The root of the lower left third molar (38) lies in close proximity to the inferior alveolar canal. No cortical fracture is seen.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R007",
+    "patient_id": "P003",
+    "report_type": "OPG",
+    "date": "2025-08-14",
+    "findings": [
+      "Lower right third molar (48) is distoangularly impacted.",
+      "No periapical radiolucency is seen."
+    ],
+    "report_text": "Lower right third molar (48) is distoangularly impacted. No periapical radiolucency is seen.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R008",
+    "patient_id": "P003",
+    "report_type": "IOPA",
+    "date": "2026-02-27",
+    "findings": [
+      "Root canal filling in tooth 26 is adequately condensed."
+    ],
+    "report_text": "Root canal filling in tooth 26 is adequately condensed.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R009",
+    "patient_id": "P004",
+    "report_type": "OPG",
+    "date": "2025-06-09",
+    "findings": [
+      "Occlusal caries on tooth 46.",
+      "No periapical radiolucency is seen."
+    ],
+    "report_text": "Occlusal caries on tooth 46. No periapical radiolucency is seen.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R010",
+    "patient_id": "P004",
+    "report_type": "Bitewing",
+    "date": "2026-01-22",
+    "findings": [
+      "Interproximal caries on the distal surface of tooth 36."
+    ],
+    "report_text": "Interproximal caries on the distal surface of tooth 36.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R011",
+    "patient_id": "P005",
+    "report_type": "OPG",
+    "date": "2025-07-21",
+    "findings": [
+      "Upper right third molar (18) is missing.",
+      "Mild maxillary sinus pneumatization is noted bilaterally."
+    ],
+    "report_text": "Upper right third molar (18) is missing. Mild maxillary sinus pneumatization is noted bilaterally.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R012",
+    "patient_id": "P005",
+    "report_type": "CBCT",
+    "date": "2026-05-08",
+    "findings": [
+      "No cortical fracture is seen."
+    ],
+    "report_text": "No cortical fracture is seen.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R013",
+    "patient_id": "P006",
+    "report_type": "IOPA",
+    "date": "2025-11-02",
+    "findings": [
+      "Widening of the periodontal ligament space at tooth 46."
+    ],
+    "report_text": "Widening of the periodontal ligament space at tooth 46.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R014",
+    "patient_id": "P006",
+    "report_type": "CBCT",
+    "date": "2026-04-18",
+    "findings": [
+      "Adequate bone height is noted in the lower right first molar region.",
+      "No cortical fracture is seen."
+    ],
+    "report_text": "Adequate bone height is noted in the lower right first molar region. No cortical fracture is seen.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R015",
+    "patient_id": "P007",
+    "report_type": "OPG",
+    "date": "2025-03-24",
+    "findings": [
+      "Periapical radiolucency at the apex of tooth 11.",
+      "Mild horizontal alveolar bone loss in the posterior regions.",
+      "Radiopaque restoration in tooth 46 with no evident secondary caries."
+    ],
+    "report_text": "Periapical radiolucency at the apex of tooth 11. Mild horizontal alveolar bone loss in the posterior regions. Radiopaque restoration in tooth 46 with no evident secondary caries.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R016",
+    "patient_id": "P007",
+    "report_type": "IOPA",
+    "date": "2026-09-03",
+    "findings": [
+      "No periapical pathology is seen at tooth 37."
+    ],
+    "report_text": "No periapical pathology is seen at tooth 37.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R017",
+    "patient_id": "P008",
+    "report_type": "OPG",
+    "date": "2025-10-01",
+    "findings": [
+      "No periapical radiolucency is seen.",
+      "Radiopaque restoration in tooth 46 with no evident secondary caries.",
+      "Upper right third molar (18) is missing."
+    ],
+    "report_text": "No periapical radiolucency is seen. Radiopaque restoration in tooth 46 with no evident secondary caries. Upper right third molar (18) is missing.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R018",
+    "patient_id": "P008",
+    "report_type": "Bitewing",
+    "date": "2026-09-14",
+    "findings": [
+      "No interproximal caries is seen.",
+      "Calculus deposits are noted interproximally."
+    ],
+    "report_text": "No interproximal caries is seen. Calculus deposits are noted interproximally.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R019",
+    "patient_id": "P009",
+    "report_type": "OPG",
+    "date": "2025-05-05",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "No periapical radiolucency is seen.",
+      "Localized vertical bone loss at tooth 31.",
+      "Full coverage crown on tooth 16."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. No periapical radiolucency is seen. Localized vertical bone loss at tooth 31. Full coverage crown on tooth 16.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R020",
+    "patient_id": "P009",
+    "report_type": "Bitewing",
+    "date": "2026-06-04",
+    "findings": [
+      "No interproximal caries is seen.",
+      "Interproximal caries on the distal surface of tooth 11."
+    ],
+    "report_text": "No interproximal caries is seen. Interproximal caries on the distal surface of tooth 11.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R021",
+    "patient_id": "P010",
+    "report_type": "OPG",
+    "date": "2025-08-18",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Mesial caries on tooth 37.",
+      "Periapical radiolucency at the apex of tooth 11.",
+      "Mild horizontal alveolar bone loss in the posterior regions."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Mesial caries on tooth 37. Periapical radiolucency at the apex of tooth 11. Mild horizontal alveolar bone loss in the posterior regions.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R022",
+    "patient_id": "P010",
+    "report_type": "IOPA",
+    "date": "2026-07-03",
+    "findings": [
+      "Widening of the periodontal ligament space at tooth 37."
+    ],
+    "report_text": "Widening of the periodontal ligament space at tooth 37.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R023",
+    "patient_id": "P011",
+    "report_type": "OPG",
+    "date": "2025-04-25",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Occlusal caries on tooth 46.",
+      "Periapical radiolucency at the apex of tooth 11.",
+      "Upper right third molar (18) is missing."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Occlusal caries on tooth 46. Periapical radiolucency at the apex of tooth 11. Upper right third molar (18) is missing.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R024",
+    "patient_id": "P011",
+    "report_type": "CBCT",
+    "date": "2026-02-28",
+    "findings": [
+      "The root of tooth 38 lies in close proximity to the inferior alveolar canal.",
+      "No cortical fracture is seen."
+    ],
+    "report_text": "The root of tooth 38 lies in close proximity to the inferior alveolar canal. No cortical fracture is seen.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R025",
+    "patient_id": "P012",
+    "report_type": "OPG",
+    "date": "2025-06-07",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Distal caries on tooth 26.",
+      "Periapical radiolucency at the apex of tooth 11.",
+      "Mild horizontal alveolar bone loss in the posterior regions."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Distal caries on tooth 26. Periapical radiolucency at the apex of tooth 11. Mild horizontal alveolar bone loss in the posterior regions.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R026",
+    "patient_id": "P012",
+    "report_type": "CBCT",
+    "date": "2026-02-20",
+    "findings": [
+      "The root of tooth 38 lies in close proximity to the inferior alveolar canal.",
+      "Adequate bone height is noted in the lower right first molar region."
+    ],
+    "report_text": "The root of tooth 38 lies in close proximity to the inferior alveolar canal. Adequate bone height is noted in the lower right first molar region.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R027",
+    "patient_id": "P013",
+    "report_type": "OPG",
+    "date": "2025-06-27",
+    "findings": [
+      "Lower right third molar (48) is mesioangularly impacted.",
+      "Distal caries on tooth 26.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Mild horizontal alveolar bone loss in the posterior regions."
+    ],
+    "report_text": "Lower right third molar (48) is mesioangularly impacted. Distal caries on tooth 26. Periapical radiolucency associated with tooth 36. Mild horizontal alveolar bone loss in the posterior regions.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R028",
+    "patient_id": "P013",
+    "report_type": "IOPA",
+    "date": "2026-04-27",
+    "findings": [
+      "Widening of the periodontal ligament space at tooth 11."
+    ],
+    "report_text": "Widening of the periodontal ligament space at tooth 11.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R029",
+    "patient_id": "P014",
+    "report_type": "OPG",
+    "date": "2025-11-16",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "Mesial caries on tooth 37.",
+      "No periapical radiolucency is seen.",
+      "Root canal filling is present in tooth 26."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. Mesial caries on tooth 37. No periapical radiolucency is seen. Root canal filling is present in tooth 26.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R030",
+    "patient_id": "P014",
+    "report_type": "OPG",
+    "date": "2026-08-05",
+    "findings": [
+      "Lower right third molar (48) is mesioangularly impacted.",
+      "Occlusal caries on tooth 46.",
+      "Periapical radiolucency at the apex of tooth 11."
+    ],
+    "report_text": "Lower right third molar (48) is mesioangularly impacted. Occlusal caries on tooth 46. Periapical radiolucency at the apex of tooth 11.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R031",
+    "patient_id": "P015",
+    "report_type": "OPG",
+    "date": "2025-08-03",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "Distal caries on tooth 26.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Radiopaque restoration in tooth 46 with no evident secondary caries."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. Distal caries on tooth 26. Periapical radiolucency associated with tooth 36. Radiopaque restoration in tooth 46 with no evident secondary caries.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R032",
+    "patient_id": "P015",
+    "report_type": "IOPA",
+    "date": "2026-02-05",
+    "findings": [
+      "Root canal filling in tooth 46 is adequately condensed."
+    ],
+    "report_text": "Root canal filling in tooth 46 is adequately condensed.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R033",
+    "patient_id": "P016",
+    "report_type": "OPG",
+    "date": "2025-05-18",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Mild horizontal alveolar bone loss in the posterior regions.",
+      "Full coverage crown on tooth 16."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. Periapical radiolucency associated with tooth 36. Mild horizontal alveolar bone loss in the posterior regions. Full coverage crown on tooth 16.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R034",
+    "patient_id": "P016",
+    "report_type": "IOPA",
+    "date": "2026-02-22",
+    "findings": [
+      "Widening of the periodontal ligament space at tooth 37."
+    ],
+    "report_text": "Widening of the periodontal ligament space at tooth 37.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R035",
+    "patient_id": "P017",
+    "report_type": "OPG",
+    "date": "2025-01-24",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Mild horizontal alveolar bone loss in the posterior regions.",
+      "Radiopaque restoration in tooth 46 with no evident secondary caries."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Periapical radiolucency associated with tooth 36. Mild horizontal alveolar bone loss in the posterior regions. Radiopaque restoration in tooth 46 with no evident secondary caries.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R036",
+    "patient_id": "P017",
+    "report_type": "CBCT",
+    "date": "2026-09-25",
+    "findings": [
+      "Adequate bone height is noted in the lower right first molar region.",
+      "The root of tooth 38 lies in close proximity to the inferior alveolar canal."
+    ],
+    "report_text": "Adequate bone height is noted in the lower right first molar region. The root of tooth 38 lies in close proximity to the inferior alveolar canal.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R037",
+    "patient_id": "P018",
+    "report_type": "OPG",
+    "date": "2025-09-01",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Occlusal caries on tooth 46.",
+      "No periapical radiolucency is seen.",
+      "Mild horizontal alveolar bone loss in the posterior regions."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Occlusal caries on tooth 46. No periapical radiolucency is seen. Mild horizontal alveolar bone loss in the posterior regions.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R038",
+    "patient_id": "P018",
+    "report_type": "CBCT",
+    "date": "2026-08-01",
+    "findings": [
+      "No cortical fracture is seen.",
+      "Adequate bone height is noted in the lower right first molar region."
+    ],
+    "report_text": "No cortical fracture is seen. Adequate bone height is noted in the lower right first molar region.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R039",
+    "patient_id": "P019",
+    "report_type": "OPG",
+    "date": "2025-12-16",
+    "findings": [
+      "Lower right third molar (48) is mesioangularly impacted.",
+      "No periapical radiolucency is seen.",
+      "Localized vertical bone loss at tooth 31."
+    ],
+    "report_text": "Lower right third molar (48) is mesioangularly impacted. No periapical radiolucency is seen. Localized vertical bone loss at tooth 31.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R040",
+    "patient_id": "P019",
+    "report_type": "IOPA",
+    "date": "2026-09-25",
+    "findings": [
+      "Root canal filling in tooth 16 is adequately condensed."
+    ],
+    "report_text": "Root canal filling in tooth 16 is adequately condensed.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R041",
+    "patient_id": "P020",
+    "report_type": "OPG",
+    "date": "2025-09-25",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "Occlusal caries on tooth 46.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Localized vertical bone loss at tooth 31."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. Occlusal caries on tooth 46. Periapical radiolucency associated with tooth 36. Localized vertical bone loss at tooth 31.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R042",
+    "patient_id": "P020",
+    "report_type": "Bitewing",
+    "date": "2026-05-13",
+    "findings": [
+      "Calculus deposits are noted interproximally.",
+      "Mild horizontal bone loss in the posterior regions."
+    ],
+    "report_text": "Calculus deposits are noted interproximally. Mild horizontal bone loss in the posterior regions.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R043",
+    "patient_id": "P021",
+    "report_type": "OPG",
+    "date": "2025-09-05",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "Radiopaque restoration in tooth 46 with no evident secondary caries."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. Radiopaque restoration in tooth 46 with no evident secondary caries.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R044",
+    "patient_id": "P021",
+    "report_type": "Bitewing",
+    "date": "2026-02-10",
+    "findings": [
+      "Interproximal caries on the distal surface of tooth 36.",
+      "Calculus deposits are noted interproximally."
+    ],
+    "report_text": "Interproximal caries on the distal surface of tooth 36. Calculus deposits are noted interproximally.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R045",
+    "patient_id": "P022",
+    "report_type": "OPG",
+    "date": "2025-01-19",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "No periapical radiolucency is seen.",
+      "Mild maxillary sinus pneumatization is noted bilaterally."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. No periapical radiolucency is seen. Mild maxillary sinus pneumatization is noted bilaterally.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R046",
+    "patient_id": "P022",
+    "report_type": "Bitewing",
+    "date": "2026-04-01",
+    "findings": [
+      "Interproximal caries on the distal surface of tooth 11.",
+      "No interproximal caries is seen."
+    ],
+    "report_text": "Interproximal caries on the distal surface of tooth 11. No interproximal caries is seen.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R047",
+    "patient_id": "P023",
+    "report_type": "OPG",
+    "date": "2025-11-16",
+    "findings": [
+      "Periapical radiolucency associated with tooth 36.",
+      "Radiopaque restoration in tooth 46 with no evident secondary caries.",
+      "Mild maxillary sinus pneumatization is noted bilaterally."
+    ],
+    "report_text": "Periapical radiolucency associated with tooth 36. Radiopaque restoration in tooth 46 with no evident secondary caries. Mild maxillary sinus pneumatization is noted bilaterally.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R048",
+    "patient_id": "P023",
+    "report_type": "Bitewing",
+    "date": "2026-09-05",
+    "findings": [
+      "No interproximal caries is seen.",
+      "Interproximal caries on the distal surface of tooth 46."
+    ],
+    "report_text": "No interproximal caries is seen. Interproximal caries on the distal surface of tooth 46.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R049",
+    "patient_id": "P024",
+    "report_type": "OPG",
+    "date": "2025-07-12",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "Distal caries on tooth 26.",
+      "No periapical radiolucency is seen.",
+      "Upper right third molar (18) is missing."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. Distal caries on tooth 26. No periapical radiolucency is seen. Upper right third molar (18) is missing.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R050",
+    "patient_id": "P024",
+    "report_type": "OPG",
+    "date": "2026-07-15",
+    "findings": [
+      "No periapical radiolucency is seen.",
+      "Mild horizontal alveolar bone loss in the posterior regions.",
+      "Root canal filling is present in tooth 26."
+    ],
+    "report_text": "No periapical radiolucency is seen. Mild horizontal alveolar bone loss in the posterior regions. Root canal filling is present in tooth 26.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R051",
+    "patient_id": "P025",
+    "report_type": "OPG",
+    "date": "2025-07-06",
+    "findings": [
+      "Lower right third molar (48) is mesioangularly impacted.",
+      "Occlusal caries on tooth 46.",
+      "No periapical radiolucency is seen.",
+      "Localized vertical bone loss at tooth 31."
+    ],
+    "report_text": "Lower right third molar (48) is mesioangularly impacted. Occlusal caries on tooth 46. No periapical radiolucency is seen. Localized vertical bone loss at tooth 31.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R052",
+    "patient_id": "P025",
+    "report_type": "CBCT",
+    "date": "2026-08-08",
+    "findings": [
+      "The root of tooth 38 lies in close proximity to the inferior alveolar canal.",
+      "No cortical fracture is seen."
+    ],
+    "report_text": "The root of tooth 38 lies in close proximity to the inferior alveolar canal. No cortical fracture is seen.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R053",
+    "patient_id": "P026",
+    "report_type": "OPG",
+    "date": "2025-12-01",
+    "findings": [
+      "Full coverage crown on tooth 16.",
+      "Mild horizontal alveolar bone loss in the posterior regions."
+    ],
+    "report_text": "Full coverage crown on tooth 16. Mild horizontal alveolar bone loss in the posterior regions.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R054",
+    "patient_id": "P026",
+    "report_type": "IOPA",
+    "date": "2026-03-19",
+    "findings": [
+      "No periapical pathology is seen at tooth 16."
+    ],
+    "report_text": "No periapical pathology is seen at tooth 16.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R055",
+    "patient_id": "P027",
+    "report_type": "OPG",
+    "date": "2025-04-06",
+    "findings": [
+      "Periapical radiolucency at the apex of tooth 11.",
+      "Localized vertical bone loss at tooth 31."
+    ],
+    "report_text": "Periapical radiolucency at the apex of tooth 11. Localized vertical bone loss at tooth 31.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R056",
+    "patient_id": "P027",
+    "report_type": "OPG",
+    "date": "2026-08-16",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "No periapical radiolucency is seen.",
+      "Mild horizontal alveolar bone loss in the posterior regions."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. No periapical radiolucency is seen. Mild horizontal alveolar bone loss in the posterior regions.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R057",
+    "patient_id": "P028",
+    "report_type": "OPG",
+    "date": "2025-04-10",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Distal caries on tooth 26.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Mild horizontal alveolar bone loss in the posterior regions."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Distal caries on tooth 26. Periapical radiolucency associated with tooth 36. Mild horizontal alveolar bone loss in the posterior regions.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R058",
+    "patient_id": "P028",
+    "report_type": "Bitewing",
+    "date": "2026-01-19",
+    "findings": [
+      "Interproximal caries on the distal surface of tooth 46.",
+      "Calculus deposits are noted interproximally."
+    ],
+    "report_text": "Interproximal caries on the distal surface of tooth 46. Calculus deposits are noted interproximally.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R059",
+    "patient_id": "P029",
+    "report_type": "OPG",
+    "date": "2025-09-06",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "No periapical radiolucency is seen.",
+      "Localized vertical bone loss at tooth 31.",
+      "Full coverage crown on tooth 16."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. No periapical radiolucency is seen. Localized vertical bone loss at tooth 31. Full coverage crown on tooth 16.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R060",
+    "patient_id": "P029",
+    "report_type": "IOPA",
+    "date": "2026-09-03",
+    "findings": [
+      "Root canal filling in tooth 47 is adequately condensed."
+    ],
+    "report_text": "Root canal filling in tooth 47 is adequately condensed.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R061",
+    "patient_id": "P030",
+    "report_type": "OPG",
+    "date": "2025-10-08",
+    "findings": [
+      "Periapical radiolucency at the apex of tooth 11.",
+      "Full coverage crown on tooth 16."
+    ],
+    "report_text": "Periapical radiolucency at the apex of tooth 11. Full coverage crown on tooth 16.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R062",
+    "patient_id": "P030",
+    "report_type": "IOPA",
+    "date": "2026-02-14",
+    "findings": [
+      "Widening of the periodontal ligament space at tooth 46."
+    ],
+    "report_text": "Widening of the periodontal ligament space at tooth 46.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R063",
+    "patient_id": "P031",
+    "report_type": "OPG",
+    "date": "2025-10-30",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R064",
+    "patient_id": "P031",
+    "report_type": "OPG",
+    "date": "2026-04-04",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Distal caries on tooth 37."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Distal caries on tooth 37.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R065",
+    "patient_id": "P032",
+    "report_type": "OPG",
+    "date": "2025-05-13",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Occlusal caries on tooth 46.",
+      "Periapical radiolucency at the apex of tooth 11.",
+      "Localized vertical bone loss at tooth 31."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Occlusal caries on tooth 46. Periapical radiolucency at the apex of tooth 11. Localized vertical bone loss at tooth 31.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R066",
+    "patient_id": "P032",
+    "report_type": "Bitewing",
+    "date": "2026-05-15",
+    "findings": [
+      "Interproximal caries on the distal surface of tooth 26.",
+      "No interproximal caries is seen."
+    ],
+    "report_text": "Interproximal caries on the distal surface of tooth 26. No interproximal caries is seen.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R067",
+    "patient_id": "P033",
+    "report_type": "OPG",
+    "date": "2025-05-05",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "No periapical radiolucency is seen.",
+      "Localized vertical bone loss at tooth 31.",
+      "Radiopaque restoration in tooth 46 with no evident secondary caries."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. No periapical radiolucency is seen. Localized vertical bone loss at tooth 31. Radiopaque restoration in tooth 46 with no evident secondary caries.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R068",
+    "patient_id": "P033",
+    "report_type": "CBCT",
+    "date": "2026-02-08",
+    "findings": [
+      "No cortical fracture is seen.",
+      "The root of tooth 38 lies in close proximity to the inferior alveolar canal."
+    ],
+    "report_text": "No cortical fracture is seen. The root of tooth 38 lies in close proximity to the inferior alveolar canal.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R069",
+    "patient_id": "P034",
+    "report_type": "OPG",
+    "date": "2025-09-10",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "Mesial caries on tooth 37.",
+      "Periapical radiolucency at the apex of tooth 11.",
+      "Localized vertical bone loss at tooth 31."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. Mesial caries on tooth 37. Periapical radiolucency at the apex of tooth 11. Localized vertical bone loss at tooth 31.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R070",
+    "patient_id": "P034",
+    "report_type": "IOPA",
+    "date": "2026-03-09",
+    "findings": [
+      "Periapical radiolucency at the apex of tooth 11."
+    ],
+    "report_text": "Periapical radiolucency at the apex of tooth 11.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R071",
+    "patient_id": "P035",
+    "report_type": "OPG",
+    "date": "2025-06-07",
+    "findings": [
+      "Lower right third molar (48) is mesioangularly impacted.",
+      "Mesial caries on tooth 37.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Localized vertical bone loss at tooth 31."
+    ],
+    "report_text": "Lower right third molar (48) is mesioangularly impacted. Mesial caries on tooth 37. Periapical radiolucency associated with tooth 36. Localized vertical bone loss at tooth 31.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R072",
+    "patient_id": "P035",
+    "report_type": "CBCT",
+    "date": "2026-09-16",
+    "findings": [
+      "The root of tooth 38 lies in close proximity to the inferior alveolar canal.",
+      "Adequate bone height is noted in the lower right first molar region."
+    ],
+    "report_text": "The root of tooth 38 lies in close proximity to the inferior alveolar canal. Adequate bone height is noted in the lower right first molar region.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R073",
+    "patient_id": "P036",
+    "report_type": "OPG",
+    "date": "2025-09-17",
+    "findings": [
+      "Periapical radiolucency at the apex of tooth 11."
+    ],
+    "report_text": "Periapical radiolucency at the apex of tooth 11.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R074",
+    "patient_id": "P036",
+    "report_type": "IOPA",
+    "date": "2026-02-03",
+    "findings": [
+      "Periapical radiolucency at the apex of tooth 11.",
+      "Widening of the periodontal ligament space at tooth 11."
+    ],
+    "report_text": "Periapical radiolucency at the apex of tooth 11. Widening of the periodontal ligament space at tooth 11.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R075",
+    "patient_id": "P037",
+    "report_type": "OPG",
+    "date": "2025-11-09",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "Mesial caries on tooth 37.",
+      "No periapical radiolucency is seen.",
+      "Root canal filling is present in tooth 26."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. Mesial caries on tooth 37. No periapical radiolucency is seen. Root canal filling is present in tooth 26.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R076",
+    "patient_id": "P037",
+    "report_type": "Bitewing",
+    "date": "2026-08-18",
+    "findings": [
+      "No interproximal caries is seen.",
+      "Calculus deposits are noted interproximally."
+    ],
+    "report_text": "No interproximal caries is seen. Calculus deposits are noted interproximally.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R077",
+    "patient_id": "P038",
+    "report_type": "OPG",
+    "date": "2025-01-27",
+    "findings": [
+      "No periapical radiolucency is seen.",
+      "Localized vertical bone loss at tooth 31.",
+      "Radiopaque restoration in tooth 46 with no evident secondary caries.",
+      "Upper right third molar (18) is missing."
+    ],
+    "report_text": "No periapical radiolucency is seen. Localized vertical bone loss at tooth 31. Radiopaque restoration in tooth 46 with no evident secondary caries. Upper right third molar (18) is missing.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R078",
+    "patient_id": "P038",
+    "report_type": "CBCT",
+    "date": "2026-09-05",
+    "findings": [
+      "The root of tooth 38 lies in close proximity to the inferior alveolar canal.",
+      "Adequate bone height is noted in the lower right first molar region."
+    ],
+    "report_text": "The root of tooth 38 lies in close proximity to the inferior alveolar canal. Adequate bone height is noted in the lower right first molar region.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R079",
+    "patient_id": "P039",
+    "report_type": "OPG",
+    "date": "2025-04-22",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Mesial caries on tooth 37.",
+      "No periapical radiolucency is seen.",
+      "Mild horizontal alveolar bone loss in the posterior regions."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Mesial caries on tooth 37. No periapical radiolucency is seen. Mild horizontal alveolar bone loss in the posterior regions.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R080",
+    "patient_id": "P039",
+    "report_type": "IOPA",
+    "date": "2026-06-25",
+    "findings": [
+      "No periapical pathology is seen at tooth 37."
+    ],
+    "report_text": "No periapical pathology is seen at tooth 37.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R081",
+    "patient_id": "P040",
+    "report_type": "OPG",
+    "date": "2025-03-24",
+    "findings": [
+      "Lower right third molar (48) is mesioangularly impacted.",
+      "Occlusal caries on tooth 46.",
+      "No periapical radiolucency is seen.",
+      "Full coverage crown on tooth 16."
+    ],
+    "report_text": "Lower right third molar (48) is mesioangularly impacted. Occlusal caries on tooth 46. No periapical radiolucency is seen. Full coverage crown on tooth 16.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R082",
+    "patient_id": "P040",
+    "report_type": "CBCT",
+    "date": "2026-07-26",
+    "findings": [
+      "Adequate bone height is noted in the lower right first molar region.",
+      "The root of tooth 38 lies in close proximity to the inferior alveolar canal."
+    ],
+    "report_text": "Adequate bone height is noted in the lower right first molar region. The root of tooth 38 lies in close proximity to the inferior alveolar canal.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R083",
+    "patient_id": "P041",
+    "report_type": "OPG",
+    "date": "2025-08-08",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Occlusal caries on tooth 46.",
+      "Periapical radiolucency at the apex of tooth 11.",
+      "Full coverage crown on tooth 16."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Occlusal caries on tooth 46. Periapical radiolucency at the apex of tooth 11. Full coverage crown on tooth 16.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R084",
+    "patient_id": "P041",
+    "report_type": "Bitewing",
+    "date": "2026-08-12",
+    "findings": [
+      "Mild horizontal bone loss in the posterior regions.",
+      "Interproximal caries on the distal surface of tooth 26."
+    ],
+    "report_text": "Mild horizontal bone loss in the posterior regions. Interproximal caries on the distal surface of tooth 26.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R085",
+    "patient_id": "P042",
+    "report_type": "OPG",
+    "date": "2025-05-12",
+    "findings": [
+      "Occlusal caries on tooth 46.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Mild horizontal alveolar bone loss in the posterior regions.",
+      "Root canal filling is present in tooth 26."
+    ],
+    "report_text": "Occlusal caries on tooth 46. Periapical radiolucency associated with tooth 36. Mild horizontal alveolar bone loss in the posterior regions. Root canal filling is present in tooth 26.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R086",
+    "patient_id": "P042",
+    "report_type": "OPG",
+    "date": "2026-09-11",
+    "findings": [
+      "Mesial caries on tooth 37.",
+      "No periapical radiolucency is seen.",
+      "Localized vertical bone loss at tooth 31."
+    ],
+    "report_text": "Mesial caries on tooth 37. No periapical radiolucency is seen. Localized vertical bone loss at tooth 31.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R087",
+    "patient_id": "P043",
+    "report_type": "OPG",
+    "date": "2025-10-17",
+    "findings": [
+      "Distal caries on tooth 26.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Localized vertical bone loss at tooth 31.",
+      "Root canal filling is present in tooth 26."
+    ],
+    "report_text": "Distal caries on tooth 26. Periapical radiolucency associated with tooth 36. Localized vertical bone loss at tooth 31. Root canal filling is present in tooth 26.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R088",
+    "patient_id": "P043",
+    "report_type": "IOPA",
+    "date": "2026-07-19",
+    "findings": [
+      "Widening of the periodontal ligament space at tooth 16."
+    ],
+    "report_text": "Widening of the periodontal ligament space at tooth 16.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R089",
+    "patient_id": "P044",
+    "report_type": "OPG",
+    "date": "2025-07-03",
+    "findings": [
+      "Distal caries on tooth 26.",
+      "No periapical radiolucency is seen.",
+      "Localized vertical bone loss at tooth 31.",
+      "Radiopaque restoration in tooth 46 with no evident secondary caries."
+    ],
+    "report_text": "Distal caries on tooth 26. No periapical radiolucency is seen. Localized vertical bone loss at tooth 31. Radiopaque restoration in tooth 46 with no evident secondary caries.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R090",
+    "patient_id": "P044",
+    "report_type": "CBCT",
+    "date": "2026-06-22",
+    "findings": [
+      "The root of tooth 38 lies in close proximity to the inferior alveolar canal.",
+      "No cortical fracture is seen."
+    ],
+    "report_text": "The root of tooth 38 lies in close proximity to the inferior alveolar canal. No cortical fracture is seen.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R091",
+    "patient_id": "P045",
+    "report_type": "OPG",
+    "date": "2025-03-07",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Distal caries on tooth 26.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Mild horizontal alveolar bone loss in the posterior regions."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Distal caries on tooth 26. Periapical radiolucency associated with tooth 36. Mild horizontal alveolar bone loss in the posterior regions.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R092",
+    "patient_id": "P045",
+    "report_type": "OPG",
+    "date": "2026-07-22",
+    "findings": [
+      "Lower right third molar (48) is mesioangularly impacted.",
+      "Mesial caries on tooth 37.",
+      "Periapical radiolucency associated with tooth 36."
+    ],
+    "report_text": "Lower right third molar (48) is mesioangularly impacted. Mesial caries on tooth 37. Periapical radiolucency associated with tooth 36.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R093",
+    "patient_id": "P046",
+    "report_type": "OPG",
+    "date": "2025-08-15",
+    "findings": [
+      "Lower left third molar (38) is horizontally impacted.",
+      "Occlusal caries on tooth 46.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Localized vertical bone loss at tooth 31."
+    ],
+    "report_text": "Lower left third molar (38) is horizontally impacted. Occlusal caries on tooth 46. Periapical radiolucency associated with tooth 36. Localized vertical bone loss at tooth 31.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R094",
+    "patient_id": "P046",
+    "report_type": "Bitewing",
+    "date": "2026-09-16",
+    "findings": [
+      "Mild horizontal bone loss in the posterior regions.",
+      "Calculus deposits are noted interproximally."
+    ],
+    "report_text": "Mild horizontal bone loss in the posterior regions. Calculus deposits are noted interproximally.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R095",
+    "patient_id": "P047",
+    "report_type": "OPG",
+    "date": "2025-04-22",
+    "findings": [
+      "Mesial caries on tooth 37.",
+      "Periapical radiolucency at the apex of tooth 11.",
+      "Localized vertical bone loss at tooth 31.",
+      "Root canal filling is present in tooth 26."
+    ],
+    "report_text": "Mesial caries on tooth 37. Periapical radiolucency at the apex of tooth 11. Localized vertical bone loss at tooth 31. Root canal filling is present in tooth 26.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R096",
+    "patient_id": "P047",
+    "report_type": "CBCT",
+    "date": "2026-04-26",
+    "findings": [
+      "The root of tooth 38 lies in close proximity to the inferior alveolar canal.",
+      "Adequate bone height is noted in the lower right first molar region."
+    ],
+    "report_text": "The root of tooth 38 lies in close proximity to the inferior alveolar canal. Adequate bone height is noted in the lower right first molar region.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R097",
+    "patient_id": "P048",
+    "report_type": "OPG",
+    "date": "2025-07-21",
+    "findings": [
+      "Occlusal caries on tooth 46.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Localized vertical bone loss at tooth 31.",
+      "Mild maxillary sinus pneumatization is noted bilaterally."
+    ],
+    "report_text": "Occlusal caries on tooth 46. Periapical radiolucency associated with tooth 36. Localized vertical bone loss at tooth 31. Mild maxillary sinus pneumatization is noted bilaterally.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R098",
+    "patient_id": "P048",
+    "report_type": "Bitewing",
+    "date": "2026-07-16",
+    "findings": [
+      "Mild horizontal bone loss in the posterior regions.",
+      "Interproximal caries on the distal surface of tooth 36."
+    ],
+    "report_text": "Mild horizontal bone loss in the posterior regions. Interproximal caries on the distal surface of tooth 36.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R099",
+    "patient_id": "P049",
+    "report_type": "OPG",
+    "date": "2025-09-15",
+    "findings": [
+      "Periapical radiolucency associated with tooth 36.",
+      "Radiopaque restoration in tooth 46 with no evident secondary caries.",
+      "Upper right third molar (18) is missing."
+    ],
+    "report_text": "Periapical radiolucency associated with tooth 36. Radiopaque restoration in tooth 46 with no evident secondary caries. Upper right third molar (18) is missing.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R100",
+    "patient_id": "P049",
+    "report_type": "IOPA",
+    "date": "2026-09-08",
+    "findings": [
+      "Periapical radiolucency at the apex of tooth 47."
+    ],
+    "report_text": "Periapical radiolucency at the apex of tooth 47.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R101",
+    "patient_id": "P050",
+    "report_type": "OPG",
+    "date": "2025-10-27",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "Occlusal caries on tooth 46.",
+      "Periapical radiolucency associated with tooth 36.",
+      "Localized vertical bone loss at tooth 31."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. Occlusal caries on tooth 46. Periapical radiolucency associated with tooth 36. Localized vertical bone loss at tooth 31.",
+    "synthetic": true
+  },
+  {
+    "report_id": "R102",
+    "patient_id": "P050",
+    "report_type": "OPG",
+    "date": "2026-09-15",
+    "findings": [
+      "Upper left third molar (28) is vertically impacted.",
+      "Distal caries on tooth 26.",
+      "Periapical radiolucency associated with tooth 36."
+    ],
+    "report_text": "Upper left third molar (28) is vertically impacted. Distal caries on tooth 26. Periapical radiolucency associated with tooth 36.",
+    "synthetic": true
+  }
+]
